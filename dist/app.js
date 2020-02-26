@@ -15819,7 +15819,7 @@ var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebar
 
 $(document).ready(function () {
   $.ajax({
-    url: 'http://localhost/php-ajax-dischi/index-php.php',
+    url: 'http://localhost/php-ajax-dischi/server2.php',
     method: 'GET',
     success: function success(data) {
       printResult(data);
@@ -15828,9 +15828,27 @@ $(document).ready(function () {
       alert('errore');
     }
   });
+  $('.selezione').change(function () {
+    var author = $(this).val();
+    console.log(author);
+    $.ajax({
+      url: 'http://localhost/php-ajax-dischi/server2.php',
+      method: 'GET',
+      data: {
+        author: author
+      },
+      success: function success(data) {
+        printResult(data);
+      },
+      error: function error(request, state, errors) {
+        alert('errore');
+      }
+    });
+  });
 });
 
 function printResult(result) {
+  reset();
   var source = $("#entry-template").html();
   var template = Handlebars.compile(source);
 
@@ -15845,9 +15863,22 @@ function printResult(result) {
         poster: cd.poster
       };
       var html = template(context);
-      $('cds-container').append(html);
+      $('.cds-container').append(html);
+    } else {
+      printResultNo();
     }
   }
+}
+
+function printResultNo() {
+  var source = $("#entry-template").html();
+  var template = Handlebars.compile(source);
+  var html = template(context);
+  $('.cds-container').append(html);
+}
+
+function reset() {
+  $('.cds-container').html('');
 }
 
 /***/ }),

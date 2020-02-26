@@ -6,7 +6,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="dist/app.css">
     </head>
     <body>
         <header>
@@ -14,10 +14,16 @@
                 <img src="logo.png" alt="logo" />
                 <select class="selezione" name="generi">
                   <option value="tutto">Tutti i generi</option>
-                  <option value="jazz">Jazz</option>
-                  <option value="pop">Pop</option>
-                  <option value="rock">Rock</option>
-                  <option value="metal">Metal</option>
+                  <option value="Bon Jovi">Bon Jovi</option>
+                  <option value="AC/DC">AC/DC</option>
+                  <option value="Thirty Seconds To Mars*">Thirty Seconds To Mars*</option>
+                  <option value="Eminem">Eminem</option>
+                  <option value="Gem Boy">Gem Boy</option>
+                  <option value="Gigi D'Agostino">Gigi D'Agostino</option>
+                  <option value="Articolo 31">Articolo 31</option>
+                  <option value="Elettra Lamborghini">Elettra Lamborghini</option>
+                  <option value="Achille Lauro">Achille Lauro</option>
+                  <option value="DJ Antoine">DJ Antoine</option>
                 </select>
             </div>
         </header>
@@ -42,6 +48,6 @@
         </script>
 
 
-        <script src="js/main.js" charset="utf-8"></script>
+        <script src="dist/app.js" charset="utf-8"></script>
     </body>
 </html>
